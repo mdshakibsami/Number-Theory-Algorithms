@@ -47,15 +47,9 @@ void findPrimePrime()
     }
 
     //Pre Calculate the number of prime prime
-    int count = 0;
     for (int i = 2; i <= N; i++)
     {
-        if (primePrime[i])
-        {
-            count++;
-        }
-
-        primePrime[i] = count;
+        primePrime[i] += primePrime[i-1];
     }
 }
 
