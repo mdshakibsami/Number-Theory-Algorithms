@@ -1,3 +1,7 @@
+/*
+https://www.spoj.com/problems/TDKPRIME/
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
@@ -37,7 +41,7 @@ signed main()
             allPrimes.push_back(i);
         }
     }
-    
+
     int q, n;
     cin >> q;
     while (q--)
