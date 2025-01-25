@@ -4,10 +4,10 @@ using namespace std;
 #define int long long
 const int MOD = 1e9 + 7;
 
-// Sieve Algorithms 
-const int N = 1e5;
+const int N = 86028121;
 bool isPrime[N + 1];
-void Sieve()    //O(n log(log n))
+
+void Sieve()
 {
     for (int i = 2; i <= N; i++)
         isPrime[i] = true;
@@ -22,16 +22,27 @@ void Sieve()    //O(n log(log n))
         }
     }
 }
-// Note: i<=N means N+1 Elements
 signed main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-    
+
     Sieve();
+
+    vector<int> allPrimes;
     for (int i = 0; i <= N; i++)
     {
         if (isPrime[i])
-            cout << i << " ";
+        {
+            allPrimes.push_back(i);
+        }
+    }
+    
+    int q, n;
+    cin >> q;
+    while (q--)
+    {
+        cin >> n;
+        cout << allPrimes[n - 1] << endl;
     }
 }
